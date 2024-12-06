@@ -1,21 +1,27 @@
-// chatController.ts
 import { Request, Response } from 'express';
-import { sendMessageToTina } from '../services/geminiService'; 
+import { initializeChat, sendMessageToTina } from '../services/geminiService';
+
+export const startChat = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const aiResponse = await initializeChat();
+    res.json({ response: aiResponse });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('An error occurred while starting the chat.');
+  }
+};
 
 export const getChat = async (req: Request, res: Response): Promise<void> => {
   try {
     const userMessage = req.body.message;
-
     if (!userMessage) {
-      res.status(400).json({ message: 'Message is required' });
+      res.status(400).send('Message is required.');
       return;
     }
-
-    const response = await sendMessageToTina(userMessage);
-    res.status(200).json({ message: response });
-
+    const aiResponse = await sendMessageToTina(userMessage);
+    res.json({ response: aiResponse });
   } catch (error) {
-    console.error('Error in controller:', error);
-    res.status(500).json({ message: 'Internal Server Error', details: (error as Error).message });
+    console.error(error);
+    res.status(500).send('An error occurred while getting the chat response.');
   }
 };
