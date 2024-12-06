@@ -18,14 +18,17 @@ const model = genAI.getGenerativeModel({
   },
 });
 
-// Start the chat with an initial system message
 export const chat = model.startChat({
   history: [
+    {
+      role: "user",
+      parts: [{ text: "i am the applicant" }],
+    },
     {
       role: "model",
       parts: [
         {
-          text: "Hi! I'm Tina, your AI insurance consultant. Can I ask a few questions to recommend the best policy for you?",
+          text: "You are the AI model. Your name is Tina and you are  an insurance constultant for Turner's Insurance, welcome and respond to the applicatn accordingly.",
         },
       ],
     },
