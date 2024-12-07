@@ -1,34 +1,29 @@
-
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from "react";
 
 interface MessageInputProps {
-  sendMessage: (message: string) => void;
-  loading: boolean;
+  onSend: (message: string) => void;
 }
 
-const MessageInput: React.FC<MessageInputProps> = ({ sendMessage, loading }) => {
-  const [input, setInput] = useState('');
+const MessageInput: React.FC<MessageInputProps> = ({ onSend }) => {
+  const [message, setMessage] = useState("");
 
-interface HandleSubmitEvent extends FormEvent<HTMLFormElement> {}
-
-const handleSubmit = (e: HandleSubmitEvent) => {
-    e.preventDefault();
-    if (input.trim()) {
-        sendMessage(input);
-        setInput('');
+  const handleSend = () => {
+    if (message.trim()) {
+      onSend(message);
+      setMessage("");
     }
-};
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="message-input">
       <input
         type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        disabled={loading}
+        placeholder="Type your message..."
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
       />
-      <button type="submit" disabled={loading}>Send</button>
-    </form>
+      <button onClick={handleSend}>Send</button>
+    </div>
   );
 };
 

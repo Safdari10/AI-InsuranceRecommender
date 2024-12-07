@@ -1,19 +1,15 @@
 
-interface Message {
-  role: string;
-  text: string;
+
+interface ChatHistoryProps {
+  history: { role: string; text: string }[];
 }
 
-interface ChatDisplayProps {
-  conversation: Message[];
-}
-
-const ChatDisplay: React.FC<ChatDisplayProps> = ({ conversation }) => {
+const ChatDisplay: React.FC<ChatHistoryProps> = ({ history }) => {
   return (
-    <div>
-      {conversation.map((message, index) => (
-        <div key={index} className={message.role}>
-          <strong>{message.role === 'user' ? 'You' : 'Tina'}:</strong> {message.text}
+    <div className="chat-history">
+      {history.map((message, index) => (
+        <div key={index} className={`message ${message.role}`}>
+          <span>{message.text}</span> {/* Ensure we're rendering the text */}
         </div>
       ))}
     </div>

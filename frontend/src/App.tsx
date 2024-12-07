@@ -1,52 +1,54 @@
-import { useState } from 'react';
-import ChatDisplay from './components/ChatDisplay';
-import MessageInput from './components/MessageInput';
-import { startChat, sendMessageToTina } from './services/FetchApi';
+import React, { useState } from "react";
+import ChatDisplay from "./components/ChatDisplay";
+import MessageInput from "./components/MessageInput";
+import { sendMessageToAI } from "./services/ChatService";
 
-interface Message {
-  role: string;
-  text: string;
-}
 
-const App = () => {
-  const [conversation, setConversation] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(false);
+const ChatBox: React.FC = () => {
+  const [chatHistory, setChatHistory] = useState<{ role: string; text: string }[]>([]);
+  const [isChatStarted, setIsChatStarted] = useState(false);
 
-  const handleStartChat = async () => {
-    setLoading(true);
+  const handleStart = async () => {
     try {
-      const response = await startChat();
-      setConversation([{ role: 'system', text: response }]);
+      const introMessage = await sendMessageToAI("Start Conversation", []); // Start with an empty history
+      setChatHistory([{ role: "ai", text: introMessage }]);
+      setIsChatStarted(true);
     } catch (error) {
-      console.error('Error starting chat:', error);
-    } finally {
-      setLoading(false);
+      console.error("Error starting chat:", error);
     }
   };
 
-  interface SendMessage {
-    (message: string): Promise<void>;
-  }
+  const handleSend = async (message: string) => {
+    // Add user message to chat history
+    const newUserMessage = { role: "user", text: message };
+    setChatHistory((prev) => [...prev, newUserMessage]);
 
-  const handleSendMessage: SendMessage = async (message) => {
-    setLoading(true);
     try {
-      const response = await sendMessageToTina(message);
-      setConversation([...conversation, { role: 'user', text: message }, { role: 'system', text: response }]);
+      // Send the user message to AI, passing only relevant history
+      const aiResponse = await sendMessageToAI(message, chatHistory); // Send current chat history
+      const newAIMessage = { role: "ai", text: aiResponse };
+
+      // Add the AI response to the chat history
+      setChatHistory((prev) => [...prev, newAIMessage]);
     } catch (error) {
-      console.error('Error sending message:', error);
-    } finally {
-      setLoading(false);
+      console.error("Error sending message:", error);
     }
   };
 
   return (
-    <div>
-      <button onClick={handleStartChat} disabled={loading}>Start Interview</button>
-      <ChatDisplay conversation={conversation} />
-      <MessageInput sendMessage={handleSendMessage} loading={loading} />
+    <div className="chat-box">
+      {!isChatStarted ? (
+        <button onClick={handleStart} className="start-button">
+          Start Chat
+        </button>
+      ) : (
+        <>
+          <ChatDisplay history={chatHistory} />
+          <MessageInput onSend={handleSend} />
+        </>
+      )}
     </div>
   );
 };
 
-export default App;
+export default ChatBox;
