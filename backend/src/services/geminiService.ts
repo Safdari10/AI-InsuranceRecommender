@@ -1,42 +1,37 @@
-import { chat } from "./geminiModel";
+import { chatSession } from './geminiModel'; 
 
-export async function initializeChat(): Promise<string> {
+
+export const sendMessageToAI = async (userMessage: string) => {
   try {
-    // Immediately send a follow-up message from the AI using the stream method
-    const result = await chat.sendMessageStream([
-      {
-        text: "Start Conversation",
-      },
-    ]);
-
-    let fullResponse = "";
-    for await (const chunk of result.stream) {
-      fullResponse += chunk.text();
+    // Append user message to chat history
+    if (chatSession.params?.history) {
+      chatSession.params.history.push({
+        role: "user",
+        parts: [{ text: userMessage }],
+      });
     }
 
-    return fullResponse;
-  } catch (error) {
-    console.error("Error communicating with Gemini:", error);
-    throw new Error("Failed to get a response from Tina.");
-  }
-}
-
-export async function sendMessageToTina(userMessage: string): Promise<string> {
-  try {
-    const result = await chat.sendMessageStream([
-      {
-        text: userMessage,
-      },
-    ]);
-
-    let fullResponse = "";
+    // Send the user message and get the response
+    const result = await chatSession.sendMessageStream(userMessage);
+     console.log(chatSession.params?.history);
+    // Concatenate and handle streamed chunks for the AI's response
+    let aiMessage = '';
     for await (const chunk of result.stream) {
-      fullResponse += chunk.text();
+      aiMessage += chunk.text(); 
     }
 
-    return fullResponse;
+    // Append AI response to chat history
+    if (chatSession.params?.history) {
+      chatSession.params.history.push({
+        role: "model",
+        parts: [{ text: aiMessage }],
+      });
+    }
+
+    // Return the final AI response
+    return aiMessage;
   } catch (error) {
     console.error("Error communicating with Gemini:", error);
-    throw new Error("Failed to get a response from Tina.");
+    throw new Error("Failed to get a response from the AI.");
   }
-}
+};
