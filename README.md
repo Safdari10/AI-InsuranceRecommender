@@ -4,11 +4,6 @@ App created using generative AI to provide insurance recommendations to clients
 ## Overview
 The insurance-recommendation-app is designed to help clients find the best insurance policies based on their individual needs. By leveraging generative AI, the app analyzes various factors and provides personalized recommendations.
 
-## Features
-- Personalized insurance recommendations
-- User-friendly interface
-- Secure data handling
-- Integration with multiple insurance providers
 
 ## Installation
 1. Clone the repository:
