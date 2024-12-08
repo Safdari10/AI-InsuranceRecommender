@@ -3,7 +3,6 @@ import ChatDisplay from "./components/ChatDisplay";
 import MessageInput from "./components/MessageInput";
 import { sendMessageToAI } from "./services/ChatService";
 
-
 const ChatBox: React.FC = () => {
   const [chatHistory, setChatHistory] = useState<{ role: string; text: string }[]>([]);
   const [isChatStarted, setIsChatStarted] = useState(false);
@@ -36,17 +35,27 @@ const ChatBox: React.FC = () => {
   };
 
   return (
-    <div className="chat-box">
-      {!isChatStarted ? (
-        <button onClick={handleStart} className="start-button">
-          Start Chat
-        </button>
-      ) : (
-        <>
-          <ChatDisplay history={chatHistory} />
-          <MessageInput onSend={handleSend} />
-        </>
-      )}
+    <div className="flex flex-col h-screen bg-gray-50">
+      <div className="flex justify-center items-center h-16 bg-blue-500 text-white">
+        <h1 className="text-xl font-bold">Chatbot</h1>
+      </div>
+      <div className="flex flex-col flex-1 p-4">
+        {isChatStarted ? (
+          <>
+            <ChatDisplay history={chatHistory} />
+            <MessageInput onSend={handleSend} />
+          </>
+        ) : (
+          <div className="flex flex-col items-center justify-center flex-1">
+            <button
+              onClick={handleStart}
+              className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Start Chat
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
