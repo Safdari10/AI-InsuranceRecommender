@@ -44,4 +44,4 @@ Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTIN
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any questions or suggestions, please contact us at support@insuranceapp.com.
+For any questions or suggestions, please create a pull request or contact us.
