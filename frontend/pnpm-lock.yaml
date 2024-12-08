@@ -35,6 +35,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.16
         version: 3.4.16
+      tsc:
+        specifier: ^2.0.4
+        version: 2.0.4
     devDependencies:
       '@babel/preset-env':
         specifier: ^7.26.0
@@ -2822,6 +2825,10 @@ packages:
         optional: true
       esbuild:
         optional: true
+
+  tsc@2.0.4:
+    resolution: {integrity: sha512-fzoSieZI5KKJVBYGvwbVZs/J5za84f2lSTLPYf6AGiIf43tZ3GNrI1QzTLcjtyDDP4aLxd46RTZq1nQxe7+k5Q==}
+    hasBin: true
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -6154,6 +6161,8 @@ snapshots:
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
       babel-jest: 29.7.0(@babel/core@7.26.0)
+
+  tsc@2.0.4: {}
 
   type-check@0.4.0:
     dependencies:
