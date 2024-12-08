@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Insurance Recommendation App - Frontend
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started with the project, follow these steps:
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  ```sh
+  git clone https://github.com/your-username/insurance-recommendation-app.git
+  cd insurance-recommendation-app/frontend
+  ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install dependencies:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+  ```sh
+  pnpm install
+  ```
+
+3. **Run the development server:**
+
+  ```sh
+  pnpm run dev
+  ```
+
+  This will start the Vite development server and you can view the application at `http://localhost:3000`.
+
+## Tech Stack
+
+- **Frontend:** React, Vite
+- **Styling:** Tailwind CSS
+- **State Management:** Redux
+- **Testing:** Jest, React Testing Library
+- **Linting:** ESLint
+
+## Building for Production
+
+To build the application for production, run:
+
+```sh
+pnpm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will create an optimized build of the application in the `dist` directory.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Running Tests
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To run tests, use the following command:
+
+```sh
+pnpm test
 ```
+
+This will execute all the test cases defined in the project.
+
+## Linting
+
+To lint the codebase, run:
+
+```sh
+pnpm run lint
+```
+
+This will check the code for any linting errors based on the ESLint configuration.
+
+## Contributing
+
+If you would like to contribute to the project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for more information.
+
