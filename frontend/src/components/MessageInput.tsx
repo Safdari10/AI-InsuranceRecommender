@@ -16,17 +16,17 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSend }) => {
   };
 
   return (
-    <form onSubmit={handleSend} className="flex items-center p-4 border-t border-gray-200">
+    <form onSubmit={handleSend} className="flex items-center p-6 border-t border-gray-200 bg-white shadow-md rounded-b-lg">
       <input
         type="text"
         placeholder="Type your message..."
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        className="text-2xl flex-1 p-2 h-16 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0f9ed5]"
+        className="text-xl flex-1 p-4 h-14 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
       />
       <button
         type="submit"
-        className="text-2xl ml-4 px-4 py-2 h-16 w-28 bg-[#0f9ed5] text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-[#0f9ed5]"
+        className="text-xl ml-4 px-6 py-3 h-14 bg-purple-500 text-white rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300 ease-in-out"
       >
         Send
       </button>
