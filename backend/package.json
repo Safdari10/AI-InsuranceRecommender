@@ -10,6 +10,7 @@
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node ./src/app.ts",
     "build": "tsc"
   },
+  "packageManager": "pnpm@9.15.0",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,7 +21,6 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "supertest": "^7.0.0"
-   
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
@@ -32,7 +32,6 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-     "tsc": "^2.0.4"
+    "typescript": "^5.7.2"
   }
 }
