@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+        - /usr/src/app/node_modules
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - GEMINI_API_KEY=${API_KEY}
+    command: ["node", "dist/app.js"]

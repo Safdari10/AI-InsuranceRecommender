@@ -1,5 +1,12 @@
 # Stage 1: Build the React application
-FROM node:18 AS build
+FROM node AS build
+
+# Set environment variables for pnpm
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+# Enable corepack to manage package managers
+RUN corepack enable
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -7,11 +14,14 @@ WORKDIR /usr/src/app
 # Copy package.json and pnpm-lock.yaml to the working directory
 COPY package.json pnpm-lock.yaml ./
 
-# Install pnpm globally
-RUN npm install -g pnpm
-
 # Install dependencies using pnpm
 RUN pnpm install --frozen-lockfile
+
+# Debug step: List contents of node_modules
+RUN ls -la node_modules
+
+# Debug step: List contents of node_modules/vite/bin
+RUN ls -la node_modules/vite/bin || echo "vite not found"
 
 # Copy the rest of the application code to the working directory
 COPY . .

@@ -1,0 +1,15 @@
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/usr/src/app # Bind local source files to container
+      - /usr/src/app/node_modules # Ensure node_modules inside the container is preserved
+    ports:
+      - "5173:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3001
+    networks:
+      - app-network  

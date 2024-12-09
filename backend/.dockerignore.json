@@ -1,0 +1,8 @@
+{
+    "name": "backend",
+    "dockerFile": "Dockerfile",
+    "workspaceMount": "null",
+    "workspaceFolder": "/workspace",
+    "settings": {},
+    "extensions": []
+  }
