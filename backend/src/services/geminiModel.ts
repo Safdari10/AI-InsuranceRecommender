@@ -10,7 +10,6 @@ if (!apiKey) {
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
-// Initialize the model
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   generationConfig: {
@@ -19,7 +18,6 @@ const model = genAI.getGenerativeModel({
   },
 });
 
-// Initialize the chat with a starting history
 export const chatSession = model.startChat({
   history: [
     {
@@ -49,9 +47,7 @@ export const chatSession = model.startChat({
         11. If the user asks for additional information, provide relevant details.
         12. Dont hallucinate or provide false information.
         13. You must ask one question at a time.
-        14. Only ask enough questions to provide the best insurance recommendation.
-
-           `,
+        14. Only ask enough questions to provide the best insurance recommendation.`,
         },
       ],
     },

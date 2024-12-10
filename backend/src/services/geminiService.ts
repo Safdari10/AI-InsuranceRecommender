@@ -1,5 +1,4 @@
-import { chatSession } from './geminiModel'; 
-
+import { chatSession } from "./geminiModel";
 
 export const sendMessageToAI = async (userMessage: string) => {
   try {
@@ -11,13 +10,11 @@ export const sendMessageToAI = async (userMessage: string) => {
       });
     }
 
-    // Send the user message and get the response
     const result = await chatSession.sendMessageStream(userMessage);
-     console.log(chatSession.params?.history);
-    // Concatenate and handle streamed chunks for the AI's response
-    let aiMessage = '';
+
+    let aiMessage = "";
     for await (const chunk of result.stream) {
-      aiMessage += chunk.text(); 
+      aiMessage += chunk.text();
     }
 
     // Append AI response to chat history
@@ -28,7 +25,6 @@ export const sendMessageToAI = async (userMessage: string) => {
       });
     }
 
-    // Return the final AI response
     return aiMessage;
   } catch (error) {
     console.error("Error communicating with Gemini:", error);
