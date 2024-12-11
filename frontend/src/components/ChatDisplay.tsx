@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faRobot } from "@fortawesome/free-solid-svg-icons";
+import Markdown from "react-markdown";
 
 interface ChatHistoryProps {
   history: { role: string; text: string; timestamp: string }[];
@@ -31,7 +32,7 @@ const ChatDisplay: React.FC<ChatHistoryProps> = ({ history }) => {
             />
           </div>
           <div>
-            <div className="text-2xl">{message.text}</div>
+            <div className="text-2xl"><Markdown>{message.text}</Markdown></div>
             <div className={`text-lg ${message.role === "user" ? "text-gray-200" : "text-gray-500"}`}>{message.timestamp}</div>
           </div>
         </div>
