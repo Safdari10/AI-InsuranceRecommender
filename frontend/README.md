@@ -1,5 +1,4 @@
-
-# Insurance Recommendation App - Frontend
+# AI-InsuranceRecommender - Frontend
 
 ## Getting Started
 
@@ -7,24 +6,24 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository:**
 
-  ```sh
-  git clone https://github.com/your-username/insurance-recommendation-app.git
-  cd insurance-recommendation-app/frontend
-  ```
+```sh
+git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
+cd AI-InsuranceRecommender/frontend
+```
 
 2. **Install dependencies:**
 
-  ```sh
-  pnpm install
-  ```
+```sh
+pnpm install
+```
 
 3. **Run the development server:**
 
-  ```sh
-  pnpm run dev
-  ```
+```sh
+pnpm run dev
+```
 
-  This will start the Vite development server and you can view the application at `http://localhost:3000`.
+This will start the Vite development server and you can view the application at `http://localhost:3000`.
 
 ## Tech Stack
 
@@ -78,4 +77,3 @@ If you would like to contribute to the project, please follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for more information.
-
