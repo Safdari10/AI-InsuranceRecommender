@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To get started with the project, follow these steps:
+To get started with the app, follow these steps:
 
 1. **Clone the repository:**
 
@@ -23,25 +23,26 @@ pnpm install
 pnpm run dev
 ```
 
-This will start the Vite development server and you can view the application at `http://localhost:3000`.
+This will start the Vite development server and you can view the app at `http://localhost:3000`.
 
 ## Tech Stack
 
-- **Frontend:** React, Vite
-- **Styling:** Tailwind CSS
-- **State Management:** Redux
-- **Testing:** Jest, React Testing Library
-- **Linting:** ESLint
+- **React**: Frontend library
+- **Vite**: Build tool
+- **Tailwind CSS**: Styling
+- **Redux**: State management
+- **Jest, React Testing Library**: Testing
+- **ESLint**: Linting
 
 ## Building for Production
 
-To build the application for production, run:
+To build the app for production, run:
 
 ```sh
 pnpm run build
 ```
 
-This will create an optimized build of the application in the `dist` directory.
+This will create an optimized build of the app in the `dist` directory.
 
 ## Running Tests
 
@@ -51,7 +52,7 @@ To run tests, use the following command:
 pnpm test
 ```
 
-This will execute all the test cases defined in the project.
+This will execute all the test cases defined in the app.
 
 ## Linting
 
@@ -65,7 +66,7 @@ This will check the code for any linting errors based on the ESLint configuratio
 
 ## Contributing
 
-If you would like to contribute to the project, please follow these steps:
+If you would like to contribute to the app, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
@@ -76,4 +77,4 @@ If you would like to contribute to the project, please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for more information.
+This app is licensed under the MIT License. See the [LICENSE](../LICENSE) file for more information.

@@ -54,7 +54,7 @@ pnpm test
 
 ## Building for Production
 
-To build the project for production, use the following command:
+To build the app for production, use the following command:
 
 ```sh
 pnpm run build
@@ -83,11 +83,9 @@ The backend service should now be running on `http://localhost:3001`.
 
 - **Node.js**: JavaScript runtime
 - **Express.js**: Web framework for Node.js
-- **PostgreSQL**: Relational database
-- **Prisma**: ORM for database management
 - **pnpm**: Fast, disk space efficient package manager
 - **Docker**: Containerization platform
 
 ## License
 
-This project is licensed under the MIT License.
+This app is licensed under the MIT License.

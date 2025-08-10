@@ -4,7 +4,7 @@ AI-InsuranceRecommender is a full-stack application that uses generative AI to p
 
 ## Overview
 
-This project leverages modern AI models to:
+This app leverages modern AI models to:
 
 - Analyze client needs and preferences
 - Generate tailored insurance policy recommendations
@@ -12,7 +12,7 @@ This project leverages modern AI models to:
 
 The app is built with a TypeScript/React frontend and a Node.js/Express backend, and supports containerized deployment with Docker.
 
-## Project Structure
+## App Structure
 
 ```
 AI-InsuranceRecommender/
@@ -26,17 +26,17 @@ AI-InsuranceRecommender/
 ## Installation
 
 1. Clone the repository:
-   `bash
-    git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
-    cd AI-InsuranceRecommender
-    `
+   ```sh
+   git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
+   cd AI-InsuranceRecommender
+   ```
 2. Install dependencies for both backend and frontend using pnpm:
-   `bash
-    cd backend
-    pnpm install
-    cd ../frontend
-    pnpm install
-    `
+   ```sh
+   cd backend
+   pnpm install
+   cd ../frontend
+   pnpm install
+   ```
 
 ## Usage
 
@@ -72,7 +72,7 @@ Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTIN
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This app is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
