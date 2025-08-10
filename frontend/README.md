@@ -1,4 +1,4 @@
-# AI-InsuranceRecommender - Frontend
+# AI Insurance Recommender - frontend
 
 ## Getting Started
 
@@ -7,8 +7,8 @@ To get started with the app, follow these steps:
 1. **Clone the repository:**
 
 ```sh
-git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
-cd AI-InsuranceRecommender/frontend
+git clone https://github.com/Safdari10/ai-insurance-recommender.git
+cd ai-insurance-recommender/frontend
 ```
 
 2. **Install dependencies:**

@@ -1,6 +1,6 @@
-# AI-InsuranceRecommender
+# AI Insurance Recommender
 
-AI-InsuranceRecommender is a full-stack application that uses generative AI to provide personalized insurance recommendations to clients. The system analyzes user input and preferences to suggest the most suitable insurance policies, streamlining the decision-making process for both clients and insurance providers.
+AI Insurance Recommender is a full-stack application that uses generative AI to provide personalized insurance recommendations to clients. The system analyzes user input and preferences to suggest the most suitable insurance policies, streamlining the decision-making process for both clients and insurance providers.
 
 ## Overview
 
@@ -15,20 +15,20 @@ The app is built with a TypeScript/React frontend and a Node.js/Express backend,
 ## App Structure
 
 ```
-AI-InsuranceRecommender/
-    backend/    # Node.js/Express backend with AI logic
-    frontend/   # React/TypeScript frontend
-    docker-compose.yml
-    README.md
-    ...
+ai-insurance-recommender/
+   backend/    # Node.js/Express backend with AI logic
+   frontend/   # React/TypeScript frontend
+   docker-compose.yml
+   README.md
+   ...
 ```
 
 ## Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
-   cd AI-InsuranceRecommender
+   git clone https://github.com/Safdari10/ai-insurance-recommender.git
+   cd ai-insurance-recommender
    ```
 2. Install dependencies for both backend and frontend using pnpm:
    ```sh

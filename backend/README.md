@@ -1,4 +1,4 @@
-# AI-InsuranceRecommender - Backend
+# AI Insurance Recommender - backend
 
 ## Table of Contents
 
@@ -14,13 +14,13 @@
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
+   git clone https://github.com/Safdari10/ai-insurance-recommender.git
    ```
 
 2. Navigate to the backend directory:
 
    ```sh
-   cd AI-InsuranceRecommender/backend
+   cd ai-insurance-recommender/backend
    ```
 
 3. Install dependencies:
