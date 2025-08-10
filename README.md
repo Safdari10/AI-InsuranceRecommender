@@ -1,42 +1,79 @@
-# insurance-recommendation-app
-App created using generative AI to provide insurance recommendations to clients
+# AI-InsuranceRecommender
+
+AI-InsuranceRecommender is a full-stack application that uses generative AI to provide personalized insurance recommendations to clients. The system analyzes user input and preferences to suggest the most suitable insurance policies, streamlining the decision-making process for both clients and insurance providers.
 
 ## Overview
-The insurance-recommendation-app is designed to help clients find the best insurance policies based on their individual needs. By leveraging generative AI, the app analyzes various factors and provides personalized recommendations.
 
+This project leverages modern AI models to:
+
+- Analyze client needs and preferences
+- Generate tailored insurance policy recommendations
+- Provide an interactive chat interface for user engagement
+
+The app is built with a TypeScript/React frontend and a Node.js/Express backend, and supports containerized deployment with Docker.
+
+## Project Structure
+
+```
+AI-InsuranceRecommender/
+    backend/    # Node.js/Express backend with AI logic
+    frontend/   # React/TypeScript frontend
+    docker-compose.yml
+    README.md
+    ...
+```
 
 ## Installation
+
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/insurance-recommendation-app.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd insurance-recommendation-app
-    ```
-3. Install the dependencies using pnpm:
-    ```bash
+   `bash
+    git clone https://github.com/Safdari10/AI-InsuranceRecommender.git
+    cd AI-InsuranceRecommender
+    `
+2. Install dependencies for both backend and frontend using pnpm:
+   `bash
+    cd backend
     pnpm install
-    ```
+    cd ../frontend
+    pnpm install
+    `
 
 ## Usage
-1. Start the backend server:
-    ```bash
-    pnpm start:backend
-    ```
-2. Start the frontend application:
-    ```bash
-    pnpm start:frontend
-    ```
-3. Open your browser and navigate to the frontend application at `http://localhost:5173` and the backend server at `http://localhost:3001`.
 
-For more detailed information, please refer to the README files in the `backend` and `frontend` directories.
+### With pnpm (local development)
+
+1. Start the backend server:
+   ```bash
+   cd backend
+   pnpm start
+   ```
+2. Start the frontend application:
+   ```bash
+   cd ../frontend
+   pnpm dev
+   ```
+3. Open your browser and navigate to the frontend at `http://localhost:5173` and the backend at `http://localhost:3001`.
+
+### With Docker
+
+You can also run the entire stack using Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+This will start both the backend and frontend containers. Adjust ports as needed in the `docker-compose.yml` files.
+
+For more details, see the README files in the `backend` and `frontend` directories.
 
 ## Contributing
+
 Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) for more details.
 
 ## License
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any questions or suggestions, please create a pull request or contact us.
+
+For any questions or suggestions, please create a pull request or open an issue on GitHub.
